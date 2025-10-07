@@ -1,20 +1,22 @@
 .footer {
   padding: 50px 0;
-  &__wrapper {
-  }
+  position: relative;
+
+
   &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
+
   &__list {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    gap: 50px;
+
     li {
       color: #111;
-
       font-size: 15.6px;
       font-style: normal;
       font-weight: 500;
@@ -22,6 +24,14 @@
       display: flex;
       align-items: center;
       gap: 5px;
+      cursor: pointer;
+      transition: color 0.2s ease;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
+      &:hover {
+        border-color: #000;
+      }
+
       img {
         width: 20px;
         padding-top: 2px;
@@ -29,14 +39,122 @@
     }
   }
 
+  &__popup {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+
+    &.active {
+      max-height: 400px;
+    }
+
+    .popup-content {
+      display: flex;
+      justify-content: space-around;
+      padding: 30px 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0 15px;
+
+        h2 {
+          margin-bottom: 15px;
+          color: #333;
+          font-size: 16px;
+          font-weight: bold;
+        }
+
+        li {
+          margin-bottom: 8px;
+          color: #666;
+          cursor: pointer;
+          transition: color 0.2s ease;
+
+          &:hover {
+            color: #000;
+          }
+        }
+      }
+    }
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 0;
+    transition: opacity 0.3s ease;
+
+    h2 {
+      color: #111;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 21px;
+      margin-bottom: 20px;
+    }
+
+    li {
+      color: #707072;
+      font-size: 13.9px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 21px;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+  }
+
   &__bottom {
     display: flex;
     justify-content: space-between;
     padding: 50px 0;
+    color: #707072;
+    border-top: 1px solid #666;
+    font-size: 13.9px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 21px;
+    transition: opacity 0.3s ease;
   }
 
   &__ul {
     display: flex;
     gap: 20px;
   }
+
+  &__popup.active ~ &__box,
+  &__popup.active ~ &__bottom {
+    opacity: 0.3;
+  }
+}
+
+.footer__popup.active {
+  max-height: 438px;
+  height: 400px;
+}
+.footer__popup {
+  position: absolute;
+  top: 15%;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
 }

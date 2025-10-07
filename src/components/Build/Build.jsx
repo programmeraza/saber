@@ -9,12 +9,7 @@ const Build = () => {
   return (
     <>
       <div className="build">
-        <div className="container">
           <div className="build__wrapper">
-            <div className="build__texts">
-              <h1 className="build__title">{/* {t.buildTitle} */}qwerty</h1>
-              <p className="build__text">{/*{t.(buildTexts)}  */}</p>
-            </div>
             <Swiper
               slidesPerView={5}
               spaceBetween={30}
@@ -59,7 +54,6 @@ const Build = () => {
               </SwiperSlide>
             </Swiper>
           </div>
-        </div>
       </div>
     </>
   );
