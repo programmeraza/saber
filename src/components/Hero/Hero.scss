@@ -1,0 +1,60 @@
+.hero {
+    background-color: #000;
+
+    &__container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0;
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #ffffff93;
+            width: 25px;
+            height: 24px;
+        }
+
+        .swiper-scrollbar {
+            background: #ffffff33;
+        }
+
+        .swiper-scrollbar-drag {
+            background: white;
+        }
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &__block {
+        padding: 48px 0;
+        text-align: center;
+
+        h1 {
+            color: #fff;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 2px;
+        }
+    }
+}

@@ -1,0 +1,108 @@
+.bring {
+    background-color: #000;
+
+    &__container {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+
+        .swiper {
+            width: 100%;
+            height: 100%;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #ffffff93;
+            width: 25px;
+            height: 24px;
+        }
+
+        .swiper-scrollbar {
+            background: #ffffff33;
+        }
+
+        .swiper-scrollbar-drag {
+            background: white;
+        }
+
+        .swiper-slide {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 18px;
+            background-repeat: no-repeat;
+            background-position: start;
+            background-size: cover;
+            height: 525px;
+            width: 100%;
+            padding: 178px 0 178px 96px;
+
+            &:nth-child(1) {
+                background-image: url(./champion.jpg);
+            }
+
+            &:nth-child(2) {
+                background-image: url(./champion.jpg);
+            }
+
+            &:nth-child(3) {
+                background-image: url(./champion.jpg);
+            }
+
+            h1 {
+                font-size: 48px;
+                font-weight: 400;
+                color: #fff;
+                letter-spacing: 1.5px;
+            }
+        }
+    }
+
+    &__content {
+        padding: 40px 0 42px 0;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 10.5px;
+        width: 100%;
+        max-width: 880px;
+
+        h1 {
+            color: #fff;
+            font-size: 44px;
+            font-weight: 900;
+            letter-spacing: 2px;
+
+        }
+
+        p {
+            color: rgba(237, 237, 237, 1);
+            font-size: 16px;
+            letter-spacing: 1.5px;
+
+        }
+    }
+
+    &__btn {
+        width: 120px;
+        padding: 9px 0;
+        border: 1px solid #fff;
+        background-color: #fff;
+        color: #212529;
+        font-size: 16px;
+        transition: all .5s ease;
+        &:hover {
+            background-color: transparent;
+            color: #fff;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.footer {
+  padding: 50px 0;
+  &__wrapper {
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+    li {
+      color: #111;
+
+      font-size: 15.6px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 28px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      img {
+        width: 20px;
+        padding-top: 2px;
+      }
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0;
+  }
+
+  &__ul {
+    display: flex;
+    gap: 20px;
+  }
+}
