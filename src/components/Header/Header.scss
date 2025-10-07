@@ -1,0 +1,102 @@
+.header {
+    padding: 18px 24px;
+    background-color: #000;
+
+    &__container {
+        width: 100%;
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        gap: 10px;
+    }
+
+    &__ul {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+
+        a {
+            color: #fff;
+            font-size: 13px;
+            padding: 2px 0;
+            position: relative;
+            clip-path: inset(-100% 0 -100% 0);
+            display: inline-block;
+            transition: color var(--speed);
+            text-transform: capitalize;
+
+            &:hover {
+                color: #fff;
+                --scale: 1;
+            }
+
+            &:before,
+            &:after {
+                content: '';
+                position: absolute;
+                height: 1px;
+                width: 100%;
+                background: #fff;
+                transform: scaleX(var(--scale, 0));
+                transition: all .6s;
+            }
+
+            &:after {
+                bottom: 100%;
+                left: 0;
+                transform-origin: 0 50%;
+            }
+
+            &:before {
+                top: 100%;
+                right: 0;
+                transform-origin: 100% 50%;
+            }
+        }
+    }
+
+    &__icon-flex {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        a {
+            margin-left: 5px;
+        }
+    }
+
+    &__inp-flex {
+        position: relative;
+        input {
+            width: 240px;
+            padding: 9.5px 12px;
+            background-color: transparent;
+            color: #ffffff93;
+            border: 1px solid #ffffff25;
+            border-radius: 5px;
+            outline: none;
+        }
+        img {
+            position: absolute;
+            top: 6px;
+            right: 9px; 
+        }
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    &__globe-icon {
+        width: max-content;
+        padding: 10px 10px 7px 10px;
+        border-radius: 5px;
+        border: 1px solid #ffffff25;
+        margin-left: 10px;
+    }
+}
