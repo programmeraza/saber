@@ -1,6 +1,7 @@
 import "./Header.scss";
 import { Link } from "react-router-dom";
 import { FaHandHoldingDollar } from "react-icons/fa6";
+import { LuTarget } from "react-icons/lu";
 import SelectLan from "../SelectLan/SelectLan";
 
 const categories = [
@@ -82,6 +83,7 @@ const Header = () => {
             <Link><img src="./cart.svg" alt="cart" /></Link>
             <Link><img src="./account.svg" alt="account" /></Link>
             <Link className="header__charity"><FaHandHoldingDollar /></Link>
+            <Link><LuTarget /></Link>
             <SelectLan />
           </div>
         </div>

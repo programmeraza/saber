@@ -18,7 +18,6 @@ function App() {
     <Header/>
     <Hero/>
     <Cards/>
-    <DropCount/>  
     <Equipment/>
     <Bring/>
     <Build/>
