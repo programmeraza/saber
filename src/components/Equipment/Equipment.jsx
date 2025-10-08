@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import "./Equipment.scss";
+import { useTranslation } from "react-i18next";
 
 const Equipment = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="equipment">
@@ -10,19 +13,21 @@ const Equipment = () => {
             <div className="equipment__content">
               <div className="equipment__line-flex">
                 <div className="equipment__line"></div>
-                <p>EQUIPMENT GUIDE</p>
+                <p>{t("EQUIPMENT GUIDE")}</p>
               </div>
               <h1>
-                PERFORMANCE <br /> EQUIPMENT
+                {t("PERFORMANCE EQUIPMENT")}
               </h1>
+              
               <p>
-                Match your sport with the right equipment for optimal <br />{" "}
-                performance – from beginners to professionals.
+                {t(
+                  "Match your sport with the right equipment for optimal performance – from beginners to professionals."
+                )}
               </p>
               <div className="equipment__btn-flex">
                 <Link>
                   <button className="equipment__btn">
-                    SHOP NOW
+                    {t("SHOP NOW")}
                     <svg
                       width="17"
                       height="17"
@@ -33,28 +38,28 @@ const Equipment = () => {
                       <path
                         d="M3.48694 8.25049H12.8203"
                         stroke="white"
-                        stroke-width="1.33333"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.33333"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                       <path
                         d="M8.15363 3.58374L12.8203 8.25041L8.15363 12.9171"
                         stroke="white"
-                        stroke-width="1.33333"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
+                        strokeWidth="1.33333"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   </button>
                 </Link>
-                <Link className="equipment__learn">Learn more</Link>
+                <Link className="equipment__learn">{t("Learn more")}</Link>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="equipment__block">
-        <h1>SPORTS TEAMS</h1>
+        <h1>{t("SPORTS TEAMS")}</h1>
       </div>
     </>
   );

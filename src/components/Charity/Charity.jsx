@@ -1,33 +1,34 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import "./Charity.scss";
 
 const Charity = () => {
-  return (
-    <>
-      <div className="charity">
-        <div className="container">
-          <div className="charity__wrapper">
-            <div className="charity__content">
-              <h2 className="charity__title">Поддержи нашу инициативу</h2>
-              <p className="charity__text">
-                Мы верим, что спорт объединяет людей и делает мир лучше. 
-                Каждое пожертвование помогает нам развивать молодёжные 
-                спортивные программы и поддерживать детей, мечтающих о большом спорте.
-              </p>
-              <p className="charity__text">
-                Отсканируй QR-код, чтобы сделать пожертвование, или нажми на кнопку ниже.
-              </p>
-              <button className="charity__button">Сделать пожертвование</button>
-            </div>
+  const { t } = useTranslation();
 
-            <div className="charity__qr">
-              <img src="/qr-donate.png" alt="QR для пожертвования" />
-              <p className="charity__qr-text">Наведи камеру и поддержи нас</p>
-            </div>
+  return (
+    <div className="charity">
+      <div className="container">
+        <div className="charity__wrapper">
+          <div className="charity__content">
+            <h2 className="charity__title">{t("Support our initiative")}</h2>
+            <p className="charity__text">
+              {t(
+                "We believe that sport unites people and makes the world better. Every donation helps us develop youth sports programs and support children who dream of big sports."
+              )}
+            </p>
+            <p className="charity__text">
+              {t("Scan the QR code to donate or click the button below.")}
+            </p>
+            <button className="charity__button">{t("Make a donation")}</button>
+          </div>
+
+          <div className="charity__qr">
+            <img src="/qr-donate.png" alt={t("QR for donation")} />
+            <p className="charity__qr-text">{t("Point your camera and support us")}</p>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

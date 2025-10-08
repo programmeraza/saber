@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import "./DropCount.scss";
 
 const DropCount = () => {
+  const { t } = useTranslation();
+
   const dropDate = new Date();
   dropDate.setDate(dropDate.getDate() + 10);
 
@@ -34,33 +37,31 @@ const DropCount = () => {
   }, []);
 
   if (!timeLeft) {
-    return <div className="dropcountdown__end">Новый дроп уже доступен!</div>;
+    return <div className="dropcountdown__end">{t("New drop is available!")}</div>;
   }
 
   return (
-    <>
-      <div className="dropcountdown">
-        <h2 className="dropcountdown__title">Новый дроп уже скоро!</h2>
-        <div className="dropcountdown__timer">
-          <div className="dropcountdown__item">
-            <span>{timeLeft.days}</span>
-            <p>дней</p>
-          </div>
-          <div className="dropcountdown__item">
-            <span>{timeLeft.hours}</span>
-            <p>часов</p>
-          </div>
-          <div className="dropcountdown__item">
-            <span>{timeLeft.minutes}</span>
-            <p>минут</p>
-          </div>
-          <div className="dropcountdown__item">
-            <span>{timeLeft.seconds}</span>
-            <p>секунд</p>
-          </div>
+    <div className="dropcountdown">
+      <h2 className="dropcountdown__title">{t("New drop is coming soon!")}</h2>
+      <div className="dropcountdown__timer">
+        <div className="dropcountdown__item">
+          <span>{timeLeft.days}</span>
+          <p>{t("days")}</p>
+        </div>
+        <div className="dropcountdown__item">
+          <span>{timeLeft.hours}</span>
+          <p>{t("hours")}</p>
+        </div>
+        <div className="dropcountdown__item">
+          <span>{timeLeft.minutes}</span>
+          <p>{t("minutes")}</p>
+        </div>
+        <div className="dropcountdown__item">
+          <span>{timeLeft.seconds}</span>
+          <p>{t("seconds")}</p>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

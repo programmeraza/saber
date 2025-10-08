@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Link.scss";
 
-import "swiper/css";
 const Links = () => {
   return (
     <>

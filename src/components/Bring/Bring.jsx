@@ -7,8 +7,11 @@ import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Scrollbar, A11y } from "swiper/modules";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Bring = () => {
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="bring">
@@ -23,38 +26,23 @@ const Bring = () => {
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
             >
-              <SwiperSlide>
-                <h1>
-                  BRING THE <br /> VICTORY HOME
-                </h1>
-                <Link>
-                    <button className="bring__btn">SHOP NOW</button>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide>
-                <h1>
-                  BRING THE <br /> VICTORY HOME
-                </h1>
-                <Link>
-                    <button className="bring__btn">SHOP NOW</button>
-                </Link>
-              </SwiperSlide>
-              <SwiperSlide>
-                <h1>
-                  BRING THE <br /> VICTORY HOME
-                </h1>
-                <Link>
-                    <button className="bring__btn">SHOP NOW</button>
-                </Link>
-              </SwiperSlide>
+              {[1, 2, 3].map((slide, index) => (
+                <SwiperSlide key={index}>
+                  <h1>
+                    {t("BRING THE VICTORY HOME")}
+                  </h1>
+                  <Link>
+                    <button className="bring__btn">{t("SHOP NOW")}</button>
+                  </Link>
+                </SwiperSlide>
+              ))}
             </Swiper>
             <div className="bring__content">
-              <h1>BUILD TO ACHIEVE GREATNESS</h1>
+              <h1>{t("BUILD TO ACHIEVE GREATNESS")}</h1>
               <p>
-                Where champions are forged and records are broken. Every
-                athlete, every team, every moment contributes to the legacy of
-                sport. Build your future, shape your destiny, and become part of
-                the story that will inspire generations.
+                {t(
+                  "Where champions are forged and records are broken. Every athlete, every team, every moment contributes to the legacy of sport. Build your future, shape your destiny, and become part of the story that will inspire generations."
+                )}
               </p>
             </div>
           </div>

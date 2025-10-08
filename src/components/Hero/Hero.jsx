@@ -1,12 +1,16 @@
 import "./Hero.scss";
 import "swiper/css";
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/scrollbar";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Scrollbar, A11y } from 'swiper/modules';
+import { Navigation, Scrollbar, A11y } from "swiper/modules";
+import { useTranslation } from "react-i18next";
 
 const Hero = () => {
+
+  const { t } = useTranslation();
+
   return (
     <>
       <div className="hero">
@@ -32,7 +36,7 @@ const Hero = () => {
               </SwiperSlide>
             </Swiper>
             <div className="hero__block">
-              <h1>FIND YOUR PERFECT SPORT</h1>
+              <h1>{t('FIND YOUR PERFECT SPORT')}</h1>
             </div>
           </div>
         </div>

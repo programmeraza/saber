@@ -1,47 +1,48 @@
 import { Link } from "react-router-dom";
 import "./Cards.scss";
+import { useTranslation } from "react-i18next";
 
 const category = [
   {
     image: "./football.png",
-    title: "FOOTBALL",
-    btn: 'SHOP FOOTBALL'
+    titleKey: "FOOTBALL",
+    btnKey: "SHOP FOOTBALL"
   },
   {
     image: "./basketball.png",
-    title: "BASKETBALL",
-    btn: 'SHOP BASKETBALL'
+    titleKey: "BASKETBALL",
+    btnKey: "SHOP BASKETBALL"
   },
   {
     image: "./voleball.png",
-    title: "VOLLEYBALL",
-    btn: 'SHOP VOLLEYBALL'
+    titleKey: "VOLLEYBALL",
+    btnKey: "SHOP VOLLEYBALL"
   },
 ];
 
 const Cards = () => {
+  const { t } = useTranslation();
+
   return (
-    <>
-      <div className="cards">
-        <div className="cards__container">
-          <div className="cards__wrapper">
-            {category.map((item, index) => (
-              <div className="cards__item" key={index}>
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="cards__image"
-                />
-                <h3 className="cards__title">{item.title}</h3>
-                <Link>
-                    <button className="cards__btn">{item.btn}</button>
-                </Link>
-              </div>
-            ))}
-          </div>
+    <div className="cards">
+      <div className="cards__container">
+        <div className="cards__wrapper">
+          {category.map((item, index) => (
+            <div className="cards__item" key={index}>
+              <img
+                src={item.image}
+                alt={t(item.titleKey)}
+                className="cards__image"
+              />
+              <h3 className="cards__title">{t(item.titleKey)}</h3>
+              <Link>
+                  <button className="cards__btn">{t(item.btnKey)}</button>
+              </Link>
+            </div>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { FaHandHoldingDollar } from "react-icons/fa6";
 import { LuTarget } from "react-icons/lu";
 import SelectLan from "../SelectLan/SelectLan";
+import { useTranslation } from "react-i18next";
 
 const categories = [
   {
-    name: "Men's Sport",
+    key: "Men's Sport",
     sub: [
       ["Shoes", "Running", "Basketball", "Lifestyle"],
       ["Clothing", "Tops", "Hoodies", "Pants", "Shorts"],
@@ -14,7 +15,7 @@ const categories = [
     ],
   },
   {
-    name: "Women's Sport",
+    key: "Women's Sport",
     sub: [
       ["Shoes", "Running", "Training", "Lifestyle"],
       ["Clothing", "Tops", "Leggings", "Jackets"],
@@ -22,7 +23,7 @@ const categories = [
     ],
   },
   {
-    name: "Saber",
+    key: "Saber",
     sub: [
       ["Shoes", "Boys", "Girls"],
       ["Clothing", "Tops", "Pants", "Hoodies"],
@@ -32,6 +33,8 @@ const categories = [
 ];
 
 const Header = () => {
+  const { t } = useTranslation();
+
   return (
     <header className="header">
       <div className="header__container">
@@ -44,7 +47,7 @@ const Header = () => {
             <ul className="header__ul">
               {categories.map((cat, i) => (
                 <li key={i} className="header__li">
-                  <Link to="#">{cat.name}</Link>
+                  <Link to="#">{t(cat.key)}</Link>
                   {cat.sub && (
                     <div className="header__dropdown">
                       <div className="header__dropdown-inner">
@@ -56,7 +59,7 @@ const Header = () => {
                                 key={k}
                                 className="header__dropdown-link"
                               >
-                                {item}
+                                {t(item)}
                               </Link>
                             ))}
                           </div>
@@ -71,7 +74,7 @@ const Header = () => {
 
           <div className="header__icon-flex">
             <div className="header__inp-flex">
-              <input type="text" placeholder="Search sevensport.uz" />
+              <input type="text" placeholder={t("Search sevensport.uz")} />
               <img src="./search.png" alt="search" />
             </div>
             <Link to={'/cart'}>
