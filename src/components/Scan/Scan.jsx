@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Scan.scss";
 
 const Scan = () => {
@@ -23,7 +24,7 @@ const Scan = () => {
             </div>
             <div className="scan__image">
                 <img src="./scan.png" alt="" />
-                <p>Scan to create your sporting future</p>
+                <Link>Scan to create your sporting future</Link>
             </div>
           </div>
         </div>

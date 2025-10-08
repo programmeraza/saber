@@ -1,30 +1,25 @@
+import { Route, Routes } from 'react-router-dom'
 import './App.scss'
-import Bring from './components/Bring/Bring'
-import Cards from './components/Cards/Cards'
-import Equipment from './components/Equipment/Equipment'
-import Header from './components/Header/Header'
-import Hero from './components/Hero/Hero'
-import Scan from './components/Scan/Scan'
-import Teams from './components/Teams/Teams'
-import Links from './components/Links/Link'
-import Build from './components/Build/Build'
-import Footer from './components/Footer/Footer'
-import DropCount from './components/DropCount/DropCount'
+import HomePage from './pages/HomePage'
+import TargetPage from './pages/TargetPage'
+import CharityPage from './pages/CharityPage'
+import ErrorPage from './pages/ErrorPage'
+import ProfilePage from './pages/ProfilePage'
+import CartPage from './pages/CartPage'
+
 
 function App() {
 
   return (
     <>
-    <Header/>
-    <Hero/>
-    <Cards/>
-    <Equipment/>
-    <Bring/>
-    <Build/>
-    <Teams/>
-    <Links/>  
-    <Scan/>
-    <Footer/>
+    <Routes>
+      <Route path='/' element={<HomePage/>}/>
+      <Route path='/target' element={<TargetPage/>}/>
+      <Route path='/charity' element={<CharityPage/>}/>
+      <Route path='/profile' element={<ProfilePage/>}/>
+      <Route path='/cart' element={<CartPage/>}/>
+      <Route path='*' element={<ErrorPage/>}/>
+    </Routes>
     </>
   )
 }

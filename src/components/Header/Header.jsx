@@ -10,33 +10,25 @@ const categories = [
     sub: [
       ["Shoes", "Running", "Basketball", "Lifestyle"],
       ["Clothing", "Tops", "Hoodies", "Pants", "Shorts"],
-      ["Accessories", "Bags", "Socks", "Hats"]
-    ]
+      ["Accessories", "Bags", "Socks", "Hats"],
+    ],
   },
   {
     name: "Women's Sport",
     sub: [
       ["Shoes", "Running", "Training", "Lifestyle"],
       ["Clothing", "Tops", "Leggings", "Jackets"],
-      ["Accessories", "Bags", "Socks", "Hats"]
-    ]
+      ["Accessories", "Bags", "Socks", "Hats"],
+    ],
   },
   {
-    name: "Kids Sport",
+    name: "Saber",
     sub: [
       ["Shoes", "Boys", "Girls"],
       ["Clothing", "Tops", "Pants", "Hoodies"],
-      ["Accessories", "Socks", "Bags"]
-    ]
+      ["Accessories", "Socks", "Bags"],
+    ],
   },
-  {
-    name: "Outdoor Sports",
-    sub: [
-      ["Camping", "Tents", "Sleeping Bags"],
-      ["Hiking", "Boots", "Backpacks"],
-      ["Fishing", "Rods", "Accessories"]
-    ]
-  }
 ];
 
 const Header = () => {
@@ -44,7 +36,9 @@ const Header = () => {
     <header className="header">
       <div className="header__container">
         <div className="header__wrapper">
-          <img src="./logo.png" alt="logo" className="header__logo" />
+          <Link to={'/'}>
+            <img src="./logo.png" alt="logo" className="header__logo" />
+          </Link>
 
           <nav className="header__nav">
             <ul className="header__ul">
@@ -80,10 +74,18 @@ const Header = () => {
               <input type="text" placeholder="Search sevensport.uz" />
               <img src="./search.png" alt="search" />
             </div>
-            <Link><img src="./cart.svg" alt="cart" /></Link>
-            <Link><img src="./account.svg" alt="account" /></Link>
-            <Link className="header__charity"><FaHandHoldingDollar /></Link>
-            <Link><LuTarget /></Link>
+            <Link to={'/cart'}>
+              <img src="./cart.svg" alt="cart" />
+            </Link>
+            <Link to={'/profile'}>
+              <img src="./account.svg" alt="account" />
+            </Link>
+            <Link to={'/charity'} className="header__charity">
+              <FaHandHoldingDollar />
+            </Link>
+            <Link to={"/target"}>
+              <LuTarget />
+            </Link>
             <SelectLan />
           </div>
         </div>
